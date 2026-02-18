@@ -1,0 +1,179 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Owner\\Desktop\\260217\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{95E53BC1-5170-4006-95BB-FBD314E8F5EB}|260217.csproj|c:\\users\\owner\\desktop\\260217\\state\\statusmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{95E53BC1-5170-4006-95BB-FBD314E8F5EB}|260217.csproj|solutionrelative:state\\statusmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{95E53BC1-5170-4006-95BB-FBD314E8F5EB}|260217.csproj|c:\\users\\owner\\desktop\\260217\\observer\\service.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{95E53BC1-5170-4006-95BB-FBD314E8F5EB}|260217.csproj|solutionrelative:observer\\service.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{95E53BC1-5170-4006-95BB-FBD314E8F5EB}|260217.csproj|c:\\users\\owner\\desktop\\260217\\systemmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{95E53BC1-5170-4006-95BB-FBD314E8F5EB}|260217.csproj|solutionrelative:systemmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{95E53BC1-5170-4006-95BB-FBD314E8F5EB}|260217.csproj|c:\\users\\owner\\desktop\\260217\\state\\status.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{95E53BC1-5170-4006-95BB-FBD314E8F5EB}|260217.csproj|solutionrelative:state\\status.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{95E53BC1-5170-4006-95BB-FBD314E8F5EB}|260217.csproj|c:\\users\\owner\\desktop\\260217\\state\\normalstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{95E53BC1-5170-4006-95BB-FBD314E8F5EB}|260217.csproj|solutionrelative:state\\normalstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{95E53BC1-5170-4006-95BB-FBD314E8F5EB}|260217.csproj|c:\\users\\owner\\desktop\\260217\\state\\istate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{95E53BC1-5170-4006-95BB-FBD314E8F5EB}|260217.csproj|solutionrelative:state\\istate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{95E53BC1-5170-4006-95BB-FBD314E8F5EB}|260217.csproj|c:\\users\\owner\\desktop\\260217\\sensor\\sensormanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{95E53BC1-5170-4006-95BB-FBD314E8F5EB}|260217.csproj|solutionrelative:sensor\\sensormanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{95E53BC1-5170-4006-95BB-FBD314E8F5EB}|260217.csproj|c:\\users\\owner\\desktop\\260217\\sensor\\sensor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{95E53BC1-5170-4006-95BB-FBD314E8F5EB}|260217.csproj|solutionrelative:sensor\\sensor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{95E53BC1-5170-4006-95BB-FBD314E8F5EB}|260217.csproj|c:\\users\\owner\\desktop\\260217\\2306010014\u4E0B\u5C3E\u8449\u6708.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{95E53BC1-5170-4006-95BB-FBD314E8F5EB}|260217.csproj|solutionrelative:2306010014\u4E0B\u5C3E\u8449\u6708.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "SystemManager.cs",
+              "DocumentMoniker": "C:\\Users\\Owner\\Desktop\\260217\\SystemManager.cs",
+              "RelativeDocumentMoniker": "SystemManager.cs",
+              "ToolTip": "C:\\Users\\Owner\\Desktop\\260217\\SystemManager.cs",
+              "RelativeToolTip": "SystemManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACwAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-18T04:15:13.32Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Service.cs",
+              "DocumentMoniker": "C:\\Users\\Owner\\Desktop\\260217\\Observer\\Service.cs",
+              "RelativeDocumentMoniker": "Observer\\Service.cs",
+              "ToolTip": "C:\\Users\\Owner\\Desktop\\260217\\Observer\\Service.cs",
+              "RelativeToolTip": "Observer\\Service.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-17T04:55:55.474Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Sensor.cs",
+              "DocumentMoniker": "C:\\Users\\Owner\\Desktop\\260217\\Sensor\\Sensor.cs",
+              "RelativeDocumentMoniker": "Sensor\\Sensor.cs",
+              "ToolTip": "C:\\Users\\Owner\\Desktop\\260217\\Sensor\\Sensor.cs",
+              "RelativeToolTip": "Sensor\\Sensor.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACYAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-18T04:18:38.606Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Status.cs",
+              "DocumentMoniker": "C:\\Users\\Owner\\Desktop\\260217\\State\\Status.cs",
+              "RelativeDocumentMoniker": "State\\Status.cs",
+              "ToolTip": "C:\\Users\\Owner\\Desktop\\260217\\State\\Status.cs",
+              "RelativeToolTip": "State\\Status.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-18T04:37:00.055Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "NormalState.cs",
+              "DocumentMoniker": "C:\\Users\\Owner\\Desktop\\260217\\State\\NormalState.cs",
+              "RelativeDocumentMoniker": "State\\NormalState.cs",
+              "ToolTip": "C:\\Users\\Owner\\Desktop\\260217\\State\\NormalState.cs",
+              "RelativeToolTip": "State\\NormalState.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-18T04:36:59.249Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "IState.cs",
+              "DocumentMoniker": "C:\\Users\\Owner\\Desktop\\260217\\State\\IState.cs",
+              "RelativeDocumentMoniker": "State\\IState.cs",
+              "ToolTip": "C:\\Users\\Owner\\Desktop\\260217\\State\\IState.cs",
+              "RelativeToolTip": "State\\IState.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvwgAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-18T04:36:53.17Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "StatusManager.cs",
+              "DocumentMoniker": "C:\\Users\\Owner\\Desktop\\260217\\State\\StatusManager.cs",
+              "RelativeDocumentMoniker": "State\\StatusManager.cs",
+              "ToolTip": "C:\\Users\\Owner\\Desktop\\260217\\State\\StatusManager.cs",
+              "RelativeToolTip": "State\\StatusManager.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAIwDgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-18T03:52:11.111Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "SensorManager.cs",
+              "DocumentMoniker": "C:\\Users\\Owner\\Desktop\\260217\\Sensor\\SensorManager.cs",
+              "RelativeDocumentMoniker": "Sensor\\SensorManager.cs",
+              "ToolTip": "C:\\Users\\Owner\\Desktop\\260217\\Sensor\\SensorManager.cs",
+              "RelativeToolTip": "Sensor\\SensorManager.cs",
+              "ViewState": "AgIAACYAAAAAAAAAAAAxwDYAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-17T00:49:07.661Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "2306010014\u4E0B\u5C3E\u8449\u6708.cs",
+              "DocumentMoniker": "C:\\Users\\Owner\\Desktop\\260217\\2306010014\u4E0B\u5C3E\u8449\u6708.cs",
+              "RelativeDocumentMoniker": "2306010014\u4E0B\u5C3E\u8449\u6708.cs",
+              "ToolTip": "C:\\Users\\Owner\\Desktop\\260217\\2306010014\u4E0B\u5C3E\u8449\u6708.cs",
+              "RelativeToolTip": "2306010014\u4E0B\u5C3E\u8449\u6708.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-17T05:32:18.904Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
