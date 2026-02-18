@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Owner\\Desktop\\260217\\260217.csproj": {}
+    "C:\\Users\\Owner\\Desktop\\Git File\\Recitation-Problems\\260217.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Owner\\Desktop\\260217\\260217.csproj": {
+    "C:\\Users\\Owner\\Desktop\\Git File\\Recitation-Problems\\260217.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Owner\\Desktop\\260217\\260217.csproj",
+        "projectUniqueName": "C:\\Users\\Owner\\Desktop\\Git File\\Recitation-Problems\\260217.csproj",
         "projectName": "260217",
-        "projectPath": "C:\\Users\\Owner\\Desktop\\260217\\260217.csproj",
+        "projectPath": "C:\\Users\\Owner\\Desktop\\Git File\\Recitation-Problems\\260217.csproj",
         "packagesPath": "C:\\Users\\Owner\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Owner\\Desktop\\260217\\obj\\",
+        "outputPath": "C:\\Users\\Owner\\Desktop\\Git File\\Recitation-Problems\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
