@@ -39,11 +39,13 @@ namespace _260217.Project.Sensor
         /// 現在の状態を検知する為のメソッド
         /// </summary>
         /// <param name="determin"></param>
-        public void StatusCheck(int determin = 0)
+        public Status StatusCheck(int determin = 0)
         {
             Status result = DetectionStrategy.GetDetectionStrategy().Detection(provide.GetValue(), determin);
 
             StatusManager.SetStatus(result);
+
+            return result;
         }
         public string? ID { get; }
 

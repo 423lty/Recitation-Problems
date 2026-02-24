@@ -10,6 +10,7 @@ namespace _260217.Project
     {
         static readonly int LoopNum = 10;
 
+
         public static void Main(string[] args)
         {
             try
@@ -22,11 +23,11 @@ namespace _260217.Project
 
                 // データの更新
                 system.GetSensorManagers().ForEach(m => system.Update(m));
+
+                // 異常発生した回数の出力  
+                system.Result();
             }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"エラーが発生しました: {ex.Message}");
-            }
+            catch (Exception ex){ Console.WriteLine($"エラーが発生しました: {ex.Message}"); }
 
         }
     }

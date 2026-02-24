@@ -1,6 +1,7 @@
 ﻿using _260217.Project.Decorator;
 using _260217.Project.Detection;
 using _260217.Project.Observer;
+using _260217.Project.State;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +14,7 @@ namespace _260217.Project.Sensor
     {
         public SensorManager()
         {
+            // センサーの情報初期化処理
             foreach (var item in _sensorTypes.Keys)
             {
                 _sensorsDictionary.Add(item, new Sensor(item, _sensorTypes[item]));
@@ -20,18 +22,35 @@ namespace _260217.Project.Sensor
                 _service.Subscribe(_sensorsDictionary[item].StatusManager);
                 _sensorsDictionary[item].AddDecorator<NoiseFilterDecorator>();
             }
+
+            // シングルトンのオブジェクトインスタンスを取得
+            _checkSensorStatus = CheckSensorStatus.GetInstance();
         }
 
         /// <summary>
         /// 格納しているデータの更新を行う為のメソッド
         /// </summary>
-        public void Update()
+        public List<Status> Update()
         {
+            List<Status> statusList = new ();
+
             foreach (var sensor in _sensorsDictionary.Values)
             {
+                 // センサーがnullでないことを確認する。nullの場合はスキップする
                 if (sensor is null) continue;
-                sensor.StatusCheck(GetDetermin(sensor.DetectionStrategy.GetDetectionStrategy()));   
+
+                // センサーの状態を検知する。センサーの状態はStatus型で返される
+                var status = sensor.StatusCheck(GetDetermin(sensor.DetectionStrategy.GetDetectionStrategy()));
+
+                // 異常な状態をリストに追加する。正常な状態は追加しない
+                if (status is not Status.Normal) statusList.Add(status);
+                
+                // センサーの状態遷移を管理するオブジェクトの更新処理を行う
+                _checkSensorStatus.Update(status);
             }
+
+            // 異常な状態のリストを返す。異常な状態がない場合はnullを返す  
+            return statusList.Count > 0 ? statusList : null!;
         }
 
         /// <summary>
@@ -77,5 +96,8 @@ namespace _260217.Project.Sensor
         private Dictionary<string,Sensor> _sensorsDictionary = new();
 
         private Service _service = new ();
+
+        private CheckSensorStatus _checkSensorStatus;
+
     }
 }

@@ -21,8 +21,7 @@ namespace _260217.Project
         /// <returns></returns>
         public static SystemManager GetInstance()
         {
-            if (Instance == null)
-                Instance = new SystemManager();
+            if (Instance == null) Instance = new SystemManager();
             return Instance;
         }
 
@@ -40,9 +39,15 @@ namespace _260217.Project
         /// </summary>
         public void Update(SensorManager manager)
         {
-            Console.WriteLine("======================================");
+            Console.WriteLine($"試行回数 {trialCount++}:======================================\n");
             manager.Update();
             Console.WriteLine(manager.ToString());
+        }
+
+        public void Result()
+        {
+            Console.WriteLine("異常発生回数 ======================================");
+            _checkSensorStatus?.Result();
         }
 
         public List<SensorManager> GetSensorManagers()
@@ -50,5 +55,9 @@ namespace _260217.Project
 
         // SensorManagerのリスト
         private List<SensorManager>? SensorManagerList = new();
+ 
+        private readonly CheckSensorStatus? _checkSensorStatus = CheckSensorStatus.GetInstance();
+
+        private int trialCount = 1;
     }
 }
