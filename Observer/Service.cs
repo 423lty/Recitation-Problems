@@ -1,4 +1,5 @@
-﻿using _260217.Project.State;
+﻿using _260217.Notification;
+using _260217.Project.State;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,18 +12,19 @@ namespace _260217.Project.Observer
     {
         public void Subscribe(StatusManager manager)
         {
-            manager.OnStatusChanged += InfoHandle;
-            manager.OnStateChanged += LogHandle;
+            manager.OnStatusChanged += _notificationManager.GetHandle;
         }
 
-        private void InfoHandle(object? sender, Status status)
+        public void SubscribeUpdate(StatusManager manager)
         {
-            Console.WriteLine($"状態が変化 → {status}");
+            manager.OnStatusChanged -= _notificationManager.GetHandle;
+            _notificationManager.SelectStrategy();
+            manager.OnStatusChanged += _notificationManager.GetHandle;
         }
 
-        private void LogHandle(object? sender, IState state)
-        {
-            Console.WriteLine($"{state.Log()}");
-        }
+
+
+        private NotificationStrategyManager _notificationManager = new();
+
     }
 }

@@ -1,5 +1,9 @@
-﻿using System;
+﻿using _260217.Notification;
+using _260217.Observer;
+using _260217.Project.Observer;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,14 +12,16 @@ namespace _260217.Project.State
 {
     internal class StatusManager
     {
-        public StatusManager() 
-          =>  SetStatus(Status.Normal);
+        public StatusManager(string sensorName)
+        {
+            _sensorName = sensorName;
+            SetStatus(Status.Normal);
 
-        /// <summary>
+        }
+
         /// イベントを発火させる為のイベントハンドラー
-        /// </summary>
-        public event EventHandler<Status>? OnStatusChanged;
-        public event EventHandler<IState>? OnStateChanged;
+        public event EventHandler<StatusChangedEventArgs>? OnStatusChanged;
+
 
         /// <summary>
         /// State パターンの状態を変化させる為のメソッド
@@ -51,15 +57,14 @@ namespace _260217.Project.State
             // 状態が変化した場合はイベントを発火させる
             Status = status;
             Change();
-            OnStatusChanged?.Invoke(this, status);
-            OnStateChanged?.Invoke(this, State!);
+            OnStatusChanged?.Invoke(this, new StatusChangedEventArgs(_sensorName, Status, State!));
         }
 
         public Status Status { get; private set; }
     
         public IState? State { get; private set; } 
 
-
+        private string _sensorName;
 
     }
 }

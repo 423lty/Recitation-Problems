@@ -36,6 +36,9 @@ namespace _260217.Project.Sensor
 
             foreach (var sensor in _sensorsDictionary.Values)
             {
+                // 通知の仕方を変更するかどうかの処理を実行
+                _service.SubscribeUpdate(sensor.StatusManager);
+
                  // センサーがnullでないことを確認する。nullの場合はスキップする
                 if (sensor is null) continue;
 

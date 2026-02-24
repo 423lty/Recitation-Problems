@@ -16,7 +16,7 @@ namespace _260217.Project.Sensor
             Name = name;
             Value = new Random().Next(range.Item1, range.Item2);
             ID = Guid.NewGuid().ToString();
-            StatusManager = new();
+            StatusManager = new(name);
             DetectionStrategy = new DetectionManager(null!);
             provide = new ConcreteProvider(this);
         }

@@ -15,4 +15,10 @@
  - SystemManager.cs
  - 2306010014下尾葉月.cs
 
-### 2026年補講問題3
+# 2026年補講問題3
+
+### 追加ファイル
+ - Notification/SlackNotification.cs
+ - Notification/SlackNotification.cs
+ - Notification/SlackNotification.cs
+ - Notification/SlackNotification.cs
