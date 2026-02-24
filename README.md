@@ -18,7 +18,14 @@
 # 2026年補講問題3
 
 ### 追加ファイル
+ - Notification/ConsoleNotification.cs
+ - Notification/EmailNotification.cs
+ - Notification/INotificationStrategy.cs
+ - Notification/NotificationStrategyManager.cs
  - Notification/SlackNotification.cs
- - Notification/SlackNotification.cs
- - Notification/SlackNotification.cs
- - Notification/SlackNotification.cs
+ - Observer/StatusChangedEventArgs.cs
+
+### 変更ファイル
+ - Observer/Service.cs
+ - State/StatusManager.cs
+ - Sensor/SensorManager.cs
