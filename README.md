@@ -5,10 +5,10 @@
 
 # 2026年補講問題2
 
-## 追加ファイル 
+### 追加ファイル 
  - CheckSensorStatus.cs
 
-## 変更ファイル
+### 変更ファイル
  - State/StatusManager.cs
  - Sensor/Sensor.cs
  - Sensor/SensorManager.cs
