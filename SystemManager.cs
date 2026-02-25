@@ -29,10 +29,10 @@ namespace _260217.Project
         /// <summary>
         /// SensorManagerのリスト を追加する為のメソッド
         /// </summary>
-        public void Add()
+        public void Add(int i)
         {
             SensorManagerList ??= new();
-            SensorManagerList.Add(new SensorManager());
+            SensorManagerList.Add(new SensorManager(i));
         }
 
         /// <summary>
@@ -80,20 +80,21 @@ namespace _260217.Project
             // データを集計する
             AggregationGroupSensorResult();
 
-            Console.WriteLine("\nグループ単位での情報 ======================================");
+            Console.WriteLine("\n--- グループ別統計レポート ---");
 
             foreach (var group in SensorManager.GroupSensorresult!)
             {
-                Console.WriteLine($"グループ: {group.Key}");
+                Console.WriteLine($"[グループ: {group.Key}]");
+                Console.Write($"  状態:");
                 int totalCount = group.Value.Values.Sum();
                 int abnormalCount = 0;
                 foreach (var status in group.Value)
                 {
                     if (status.Key != Status.Normal) abnormalCount += status.Value;
-                    Console.WriteLine($"状態: {status.Key}, カウント: {status.Value}");
+                    Console.Write($"{status.Key}:[{status.Value}] ,");
                 }
                 double abnormalRate = totalCount == 0 ? 0 : (double)abnormalCount / totalCount * 100;
-                Console.WriteLine($"異常発生率: {abnormalRate}");
+                Console.WriteLine($"\n  異常発生率: {abnormalRate} %");
             }
         }
 

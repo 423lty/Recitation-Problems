@@ -19,7 +19,7 @@ namespace _260217.Project
                 var system = SystemManager.GetInstance();
 
                 // 新しい要素を追加
-                for (int i = 0; i < LoopNum; i++) system.Add();
+                for (int i = 0; i < LoopNum; i++) system.Add(i);
 
                 // データの更新
                 system.GetSensorManagers().ForEach(m => system.Update(m));

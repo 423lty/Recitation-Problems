@@ -13,27 +13,34 @@ namespace _260217.Project.Sensor
 {
     internal class SensorManager
     {
-        public SensorManager()
+        public SensorManager(int i)
         {
             // センサーの情報初期化処理
-            foreach (var item in _sensorTypes.Keys)
+            string groupName = $"第{i + 1}工場";
+            for (int j = 0; j < MaxSensorNum; j++)
             {
-                _sensorsDictionary.Add(item, new Sensor(item, _sensorTypes[item]));
-                ChangeSensorCheckStrategy(item, new averageStrategy());
-                _service.Subscribe(_sensorsDictionary[item].StatusManager);
-                _sensorsDictionary[item].AddDecorator<NoiseFilterDecorator>();
+                // センサーの種類をランダムに選択する
+                var type = _sensorTypes.ElementAt(_random.Next(_sensorTypes.Count));
+
+                // センサーのIDを生成する
+                string sensorName = $"{type.Key}_{j}";
+
+
+                _sensorsDictionary.Add(sensorName, new Sensor(groupName, sensorName, _sensorTypes[type.Key]));
+                ChangeSensorCheckStrategy(sensorName, new averageStrategy());
+                _service.Subscribe(_sensorsDictionary[sensorName].StatusManager);
+                _sensorsDictionary[sensorName].AddDecorator<NoiseFilterDecorator>();
             }
 
             // 一度だけ集計変数にグループごとの異常発生回数の初期化処理を行う
             if (GroupSensorresult is null)
-            {
                 GroupSensorresult = new ();
-                
-                foreach (var sensor in _sensorsDictionary.Values)
-                    GroupSensorresult[sensor.GroupName] = 
-                        Enum.GetValues<Status>().ToDictionary(s => s, s => 0);
-            }
 
+            if (!GroupSensorresult.ContainsKey(groupName))
+            {
+                GroupSensorresult[groupName] =
+                    Enum.GetValues<Status>().ToDictionary(s => s, s => 0);
+            }
             // シングルトンのオブジェクトインスタンスを取得
             _checkSensorStatus = CheckSensorStatus.GetInstance();
         }
@@ -48,7 +55,7 @@ namespace _260217.Project.Sensor
             foreach (var sensor in _sensorsDictionary.Values)
             {
                 // 通知の仕方を変更するかどうかの処理を実行
-                _service.SubscribeUpdate(sensor.StatusManager);
+                //_service.SubscribeUpdate(sensor.StatusManager);
 
                  // センサーがnullでないことを確認する。nullの場合はスキップする
                 if (sensor is null) continue;
@@ -118,6 +125,10 @@ namespace _260217.Project.Sensor
         private CheckSensorStatus _checkSensorStatus;
 
         Log log = new (new CsvAdapter(new LegacySaver()));
+
+        const int MaxSensorNum = 10;
+
+        private static Random _random = new ();
 
     }
 }

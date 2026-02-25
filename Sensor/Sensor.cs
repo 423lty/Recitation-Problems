@@ -11,13 +11,13 @@ namespace _260217.Project.Sensor
 {
     internal class Sensor
     {
-        public Sensor(string name, Tuple<int, int> range)
+        public Sensor(string groupName, string name, Tuple<int, int> range)
         {
             // プロパティの初期化
             Name = name;
             Value = new Random().Next(range.Item1, range.Item2);
             ID = Guid.NewGuid().ToString();
-            GroupName = name;
+            GroupName = groupName;
 
             // オブジェクトの初期化
             StatusManager = new(name);
