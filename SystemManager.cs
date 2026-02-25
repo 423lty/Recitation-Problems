@@ -1,6 +1,8 @@
 ﻿using _260217.Project.Sensor;
+using _260217.Project.State;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,7 +13,6 @@ namespace _260217.Project
     {
 
         private SystemManager() {}
-
 
         private static SystemManager? Instance { get; set; } = null;
 
@@ -48,6 +49,52 @@ namespace _260217.Project
         {
             Console.WriteLine("異常発生回数 ======================================");
             _checkSensorStatus?.Result();
+            DrawGroupSensorResult();
+        }
+
+        /// <summary>
+        /// グループごとの集計を実行する
+        /// </summary>
+        private void AggregationGroupSensorResult()
+        {
+            // 総合のセンサーをしゅとく
+            foreach(var sensorManager in SensorManagerList!)
+            {
+                foreach(var sensor in sensorManager.GetSensors().Values)
+                {
+                    // nullの場合はスキップする
+                    if (sensor is null) continue;
+
+                    // センサーの状態を取得,センサーのグループ名を取得して、センサーの状態をグループごとにカウントする
+                    var status = sensor.StatusManager.Status;
+                    SensorManager.GroupSensorresult![sensor.GroupName][status]++;
+                }
+            }
+        }
+
+        /// <summary>
+        /// グループごとの集計を描画する
+        /// </summary>
+        private void DrawGroupSensorResult()
+        {
+            // データを集計する
+            AggregationGroupSensorResult();
+
+            Console.WriteLine("\nグループ単位での情報 ======================================");
+
+            foreach (var group in SensorManager.GroupSensorresult!)
+            {
+                Console.WriteLine($"グループ: {group.Key}");
+                int totalCount = group.Value.Values.Sum();
+                int abnormalCount = 0;
+                foreach (var status in group.Value)
+                {
+                    if (status.Key != Status.Normal) abnormalCount += status.Value;
+                    Console.WriteLine($"状態: {status.Key}, カウント: {status.Value}");
+                }
+                double abnormalRate = totalCount == 0 ? 0 : (double)abnormalCount / totalCount * 100;
+                Console.WriteLine($"異常発生率: {abnormalRate}");
+            }
         }
 
         public List<SensorManager> GetSensorManagers()
@@ -55,9 +102,11 @@ namespace _260217.Project
 
         // SensorManagerのリスト
         private List<SensorManager>? SensorManagerList = new();
- 
+
+        // CheckSensorStatusのシングルトンの読み取り専用オブジェクトインスタンス
         private readonly CheckSensorStatus? _checkSensorStatus = CheckSensorStatus.GetInstance();
 
+        // 試行回数をカウントするための変数
         private int trialCount = 1;
     }
 }

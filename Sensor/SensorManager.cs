@@ -23,6 +23,16 @@ namespace _260217.Project.Sensor
                 _sensorsDictionary[item].AddDecorator<NoiseFilterDecorator>();
             }
 
+            // 一度だけ集計変数にグループごとの異常発生回数の初期化処理を行う
+            if (GroupSensorresult is null)
+            {
+                GroupSensorresult = new ();
+                
+                foreach (var sensor in _sensorsDictionary.Values)
+                    GroupSensorresult[sensor.GroupName] = 
+                        Enum.GetValues<Status>().ToDictionary(s => s, s => 0);
+            }
+
             // シングルトンのオブジェクトインスタンスを取得
             _checkSensorStatus = CheckSensorStatus.GetInstance();
         }
@@ -63,9 +73,11 @@ namespace _260217.Project.Sensor
         /// <param name="strategy">戦略名</param>
         public void ChangeSensorCheckStrategy(string sensorName, IDetectionStrategy strategy)
         {
-            if (_sensorsDictionary.ContainsKey(sensorName))
-                _sensorsDictionary[sensorName].DetectionStrategy.Switch(strategy);
+            if (_sensorsDictionary.ContainsKey(sensorName)) _sensorsDictionary[sensorName].DetectionStrategy.Switch(strategy);
         }
+
+        public Dictionary<string, Sensor> GetSensors()
+            => _sensorsDictionary;
 
         public override string ToString()
         {
@@ -81,19 +93,18 @@ namespace _260217.Project.Sensor
 
         private int GetDetermin(IDetectionStrategy _strategy)
         {
-            if (_strategy.GetType() == typeof(averageStrategy))
-                return _sensorsDictionary.Values.Sum(x => x.Value) / _sensorsDictionary.Values.Count;
-            else if (_strategy.GetType() == typeof(rapidIncreaseStrategy))
-                return 0;
-
+            if (_strategy.GetType() == typeof(averageStrategy)) return _sensorsDictionary.Values.Sum(x => x.Value) / _sensorsDictionary.Values.Count;
+            else if (_strategy.GetType() == typeof(rapidIncreaseStrategy)) return 0;
             return 0;
         }
 
-        private Dictionary<string, Tuple<int, int>> _sensorTypes = new(){
+        private readonly Dictionary<string, Tuple<int, int>> _sensorTypes = new(){
             {"temperature",Tuple.Create(0,120)},
             {"humidity",Tuple.Create(0,100)},
             {"pressure",Tuple.Create(0,200)},
         };
+
+        public static Dictionary<string,Dictionary<Status,int>>? GroupSensorresult = null;
 
 
         private Dictionary<string,Sensor> _sensorsDictionary = new();
