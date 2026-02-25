@@ -29,3 +29,13 @@
  - Observer / Service.cs
  - State / StatusManager.cs
  - Sensor / SensorManager.cs
+
+# 2026年補講問題4
+
+### 追加ファイル
+ - なし
+
+### 変更ファイル
+ - Sensor / Sensor.cs
+ - Sensor / SensorManager.cs
+ - SystemManager.cs
