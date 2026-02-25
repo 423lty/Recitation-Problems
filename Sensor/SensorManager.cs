@@ -2,6 +2,7 @@
 using _260217.Project.Detection;
 using _260217.Project.Observer;
 using _260217.Project.State;
+using _260217.Saver;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -60,6 +61,9 @@ namespace _260217.Project.Sensor
                 
                 // センサーの状態遷移を管理するオブジェクトの更新処理を行う
                 _checkSensorStatus.Update(status);
+
+                // 保存する
+                log.Save(sensor);
             }
 
             // 異常な状態のリストを返す。異常な状態がない場合はnullを返す  
@@ -112,6 +116,8 @@ namespace _260217.Project.Sensor
         private Service _service = new ();
 
         private CheckSensorStatus _checkSensorStatus;
+
+        Log log = new (new CsvAdapter(new LegacySaver()));
 
     }
 }
