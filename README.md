@@ -43,11 +43,22 @@
 # 2026年補講問題5
 
 ### 追加ファイル
- - Saver/CsvAdapter.cs
- - Saver/ILogSaver.cs
- - Saver/LegacySaver.cs
- - Saver/Log.cs
- - Saver/SensorSaver.cs
+ - Saver / CsvAdapter.cs
+ - Saver / ILogSaver.cs
+ - Saver / LegacySaver.cs
+ - Saver / Log.cs
+ - Saver / SensorSaver.cs
 
 ### 変更ファイル
  - Sensor / SensorManager.cs
+   
+# 2026年補講問題5
+
+### 追加ファイル
+ - なし
+   
+### 変更ファイル
+ - Sensor / Sensor.cs
+ - Sensor / SensorManager.cs
+ - SystemManager.cs
+ - 2306010014下尾葉月.cs
