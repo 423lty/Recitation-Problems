@@ -40,7 +40,7 @@
  - Sensor / SensorManager.cs
  - SystemManager.cs
 
-# 2026年補講問題5
+# 2026年補講問題5,6
 
 ### 追加ファイル
  - Saver / CsvAdapter.cs
